@@ -5,7 +5,13 @@ const more = document.getElementById('more');
 
 const apiURL = 'https://api.lyrics.ovh';
 
-form = addEventListener('submit', e => {
+function searchSongs(term) {
+    fetch(`${apiURL}/suggest/${term}`)
+        .then(res => res.json())
+        .then(data => console.log(data));
+}
+
+form.addEventListener('submit', e => {
     e.preventDefault();
 
     const searchTerm = search.value.trim();
@@ -16,3 +22,4 @@ form = addEventListener('submit', e => {
         searchSongs(searchTerm);
     }
 });
+
