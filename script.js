@@ -5,10 +5,15 @@ const more = document.getElementById('more');
 
 const apiURL = 'https://api.lyrics.ovh';
 
-function searchSongs(term) {
-    fetch(`${apiURL}/suggest/${term}`)
-        .then(res => res.json())
-        .then(data => console.log(data));
+async function searchSongs(term) {
+    // fetch(`${apiURL}/suggest/${term}`)
+    //     .then(res => res.json())
+    //     .then(data => console.log(data));
+
+    const res = await fetch(`${apiURL}/suggest/${term}`);
+    const data = await res.json();
+
+    console.log(data);
 }
 
 form.addEventListener('submit', e => {
@@ -23,4 +28,3 @@ form.addEventListener('submit', e => {
     }
 });
 
-// placeholder
