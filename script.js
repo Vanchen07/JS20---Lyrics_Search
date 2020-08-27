@@ -15,6 +15,7 @@ async function searchSongs(term) {
 
     showData(data);
     console.log(data)
+    console.log(term)
 
 }
 
