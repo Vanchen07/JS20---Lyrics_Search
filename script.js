@@ -14,8 +14,6 @@ async function searchSongs(term) {
     const data = await res.json();
 
     showData(data);
-    console.log(data)
-    console.log(term)
 
 }
 
